@@ -1,4 +1,4 @@
-# YOLO-Pi
+# Teensy-YOLO - Darknet-based network, optimized for CPU inference on SBCs with a small number of classes using custom datasets
 Fast object recognition (~15 FPS) on Raspberry Pi 3, using scaled-down configuration of Tiny-YOLO (v2) / Darknet with NNPack on a custom dataset (a single class).
 
 Use-Case
