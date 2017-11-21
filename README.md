@@ -40,7 +40,7 @@ policy=steps
 steps=10000,20000,30000    
 scales=.1,.1,.1    
 
-Dataset (Tutorial: https://timebutt.github.io/static/how-to-train-yolov2-to-detect-custom-objects/)
+Dataset
 -------
 29 images of a one pedestrian button at various distances    
 Extracted (ffmpeg) from a 720p video (Samsung Galaxy 8 phone) at eye-height to 640x480 images    
@@ -49,6 +49,7 @@ Resized (convert) to 208x208
 Bounding Box Tool:  https://github.com/puzzledqs/BBox-Label-Tool    
 Converted (python ./convert.py) labels to YOLO format    
 Create train.txt and test.txt (python ./process.py)    
+Tutorial: https://timebutt.github.io/static/how-to-train-yolov2-to-detect-custom-objects/    
 
 Results
 -------
