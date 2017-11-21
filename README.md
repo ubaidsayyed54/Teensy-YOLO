@@ -1,16 +1,17 @@
-# Teensy-YOLO - Darknet-based network, optimized for CPU inference on SBCs with a small number of classes using custom datasets
-Fast object recognition (~15 FPS) on Raspberry Pi 3, using scaled-down configuration of Tiny-YOLO (v2) / Darknet with NNPack on a custom dataset (a single class).
+# Teensy-YOLO 
+Fast object recognition (~15 FPS) on Raspberry Pi 3, using scaled-down configuration of Tiny-YOLO (v2) / Darknet with NNPack on a custom dataset, using a single object class.
 
 Use-Case
 --------
-YOLO/Darknet may be used as a custom location detector for specific objects (invariant) on a multi-core SBC (like Raspberry Pi 3), with high FPS and lowered, but sufficient, accuracy.  This specific use was for a Hackaday wearable (https://hackaday.io/project/26863-visioneer), worn by a blind person to detect the presence and location of a pedestrian button near a crosswalk.
+YOLO/Darknet may be used as a custom location detector on a multi-core SBC (like Raspberry Pi 3), with high FPS and lowered, but sufficient, accuracy, when only a small number of classes are needed.  This specific use was built for a Hackaday wearable (https://hackaday.io/project/26863-visioneer), used by a blind person, to detect the presence and location of a pedestrian button near a crosswalk.
 
 Hardware for Inference (as shown:  )
 --------
 Raspberry Pi 3 Model B (no overclocking)    
 Raspberry Pi Camera Module V2 - 8 Megapixel,1080p     
-Kuman 3.5 Inch TFT LCD Display Monitor    
-40x40mm Fan (required to prevent CPU throttling due to overheating)    
+(Optional) Kuman 3.5 Inch TFT LCD Display Monitor    
+40x40mm Fan (required to prevent CPU throttling due to overheating)   
+NOTE:  I acheived 10 FPS using the much smaller NanoPi Neo AIR
 
 Software
 --------
@@ -43,13 +44,13 @@ scales=.1,.1,.1
 Dataset
 -------
 29 images of a one pedestrian button at various distances    
-Extracted (ffmpeg) from a 720p video (Samsung Galaxy 8 phone) at eye-height to 640x480 images    
+Extracted (ffmpeg) from a 720p video (Samsung Galaxy 8 phone), taken at eye-height, to 640x480 images    
 Converted (mogrify) from PNG to JPEGs    
 Resized (convert) to 208x208    
 Bounding Box Tool:  https://github.com/puzzledqs/BBox-Label-Tool    
 Converted (python ./convert.py) labels to YOLO format    
 Create train.txt and test.txt (python ./process.py)    
-Tutorial: https://timebutt.github.io/static/how-to-train-yolov2-to-detect-custom-objects/    
+Generic tutorial: https://timebutt.github.io/static/how-to-train-yolov2-to-detect-custom-objects/    
 
 Results
 -------
