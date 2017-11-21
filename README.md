@@ -1,5 +1,5 @@
 # Teensy-YOLO 
-Fast object recognition (~15 FPS) on Raspberry Pi 3, using scaled-down configuration of Tiny-YOLO (v2) / Darknet with NNPack on a custom dataset, using a single object class.
+Fast object recognition (~15 FPS) on Raspberry Pi 3, using scaled-down version of Tiny-YOLO (v2) / Darknet with NNPack on a custom dataset, using a single object class.
 
 Use-Case
 --------
