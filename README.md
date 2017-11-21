@@ -3,7 +3,7 @@ Fast object recognition (~14 FPS) on Raspberry Pi 3, using scaled-down version o
 
 Use-Case
 --------
-YOLO/Darknet may be used as a custom location detector on a multi-core SBC (like Raspberry Pi 3), with high FPS and lowered, but sufficient, accuracy, when only a small number of classes are needed.  This specific use was built for a Hackaday wearable (https://hackaday.io/project/26863-visioneer), used by a blind person, to detect the presence and location of a pedestrian button near a crosswalk.
+YOLO/Darknet may be used as a custom location detector on a multi-core SBC (like Raspberry Pi 3), with high FPS and lowered, but sufficient, accuracy, when only a small number of classes are needed.  This specific use was built for a Hackaday wearable (https://hackaday.io/project/26863-visioneer), to be used by a blind person, to detect the presence and direction of a pedestrian button near a crosswalk.
 
 Hardware (as shown:  )
 --------
