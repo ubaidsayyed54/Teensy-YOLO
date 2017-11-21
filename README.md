@@ -50,7 +50,7 @@ Resized (convert) to 208x208
 Bounding Box Tool:  https://github.com/puzzledqs/BBox-Label-Tool    
 Converted (python ./convert.py) labels to YOLO format    
 Create train.txt and test.txt (python ./process.py)    
-Generic tutorial: https://timebutt.github.io/static/how-to-train-yolov2-to-detect-custom-objects/    
+Helpful generic tutorial by Nils Tijtgat: https://timebutt.github.io/static/how-to-train-yolov2-to-detect-custom-objects/    
 
 Results
 -------
