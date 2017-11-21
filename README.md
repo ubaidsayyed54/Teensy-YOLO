@@ -5,13 +5,14 @@ Use-Case
 --------
 YOLO/Darknet may be used as a custom location detector on a multi-core SBC (like Raspberry Pi 3), with high FPS and lowered, but sufficient, accuracy, when only a small number of classes are needed.  This specific use was built for a Hackaday wearable (https://hackaday.io/project/26863-visioneer), used by a blind person, to detect the presence and location of a pedestrian button near a crosswalk.
 
-Hardware for Inference (as shown:  )
+Hardware (as shown:  )
 --------
 Raspberry Pi 3 Model B (no overclocking)    
 Raspberry Pi Camera Module V2 - 8 Megapixel,1080p     
 (Optional) Kuman 3.5 Inch TFT LCD Display Monitor    
 40x40mm Fan (required to prevent CPU throttling due to overheating)   
-NOTE:  I acheived 10 FPS using the much smaller NanoPi Neo AIR
+Training Workstation: Ubuntu 16.04 / GTX 1060 (6G) / CUDA 8.0.61.2 / CuDNN 5.1    
+NOTE:  I acheived 10 FPS using the much smaller NanoPi Neo AIR    
 
 Software
 --------
@@ -33,9 +34,8 @@ Output = 13x13
 [Ex. 1 class, 1 anchor(NUM) -> (1 + 4 + 1) * 1 = 6  Filters for last layer]    
 
 Training (~15000 iterations needed for this dataset)
---------
-Workstation Ubuntu 16.04 / GTX 1060 (6G Memory)      
-Pre-trained weights: darknet19_448.conv.32    
+--------  
+Pre-trained weight file: darknet19_448.conv.32    
 learning_rate=0.001    
 policy=steps    
 steps=10000,20000,30000    
