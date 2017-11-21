@@ -17,11 +17,11 @@ Software
 Raspbian Stretch - https://www.raspberrypi.org/downloads/raspbian/    
 Darknet for NNPack - https://github.com/digitalbrain79/darknet-nnpack    
 OpenCV 3.3.1 (2017.10.23) - https://opencv.org/releases.html    
-Changes to demo.c - default demo will not run NNPack multi-threading    
-Changes to image.c - added simple equation to output whether bbox is left, right or center    
-Changes to detector.c - custom location of names file and number of classes    
+Changes to demo.c - default demo will not run NNPack multi-threading, without these modifications    
+Changes to image.c - added simple equation to output whether bbox is left, right or center of screen center    
+Changes to detector.c - YOU WILL NEED TO CUSTOMIZE THIS with the path to your names file and number of classes   
 
-Teensy-YOLO
+Teensy-YOLO (teensy-yolo.cfg)
 -----------
 Reduced Input Width/Height = 108x108     
 (12) Convolutional Layers (3x1), all Batch Normalized and Padded    
@@ -30,10 +30,9 @@ Reduced Input Width/Height = 108x108
 (1) Final Linear Convolutional Layer - Filters = (#classes + #coords(4) + 1)*(NUM)    
 [Ex. 1 class, 1 anchor(NUM) -> (1 + 4 + 1) * 1 = 6  Filters for last layer]    
 
-Training
+Training (~15000 iterations needed for this dataset)
 --------
-Ubuntu 16.04 and GTX 1060 (6G Memory)    
-~15000 iterations    
+Workstation Ubuntu 16.04 / GTX 1060 (6G Memory) 
 Pre-trained weights: darknet19_448.conv.32    
 learning_rate=0.001    
 policy=steps    
