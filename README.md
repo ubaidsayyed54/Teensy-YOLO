@@ -1,5 +1,5 @@
 # YOLO-Pi
-Fast object recognition (~15 FPS) on Raspberry Pi 3, using YOLO (v2) / Darknet with NNPack on a custom dataset (a single class) and scaled down version of Tiny-YOLO-VOC v2 with a custom anchor.
+Fast object recognition (~15 FPS) on Raspberry Pi 3, using custom configuration of YOLO (v2) / Darknet with NNPack on a custom dataset (a single class) and scaled down version of Tiny-YOLO-VOC v2 with a custom anchor.
 
 Use-Case
 --------
@@ -23,7 +23,8 @@ Changes to detector.c - YOU WILL NEED TO CUSTOMIZE THIS with the path to your na
 
 Teensy-YOLO (teensy-yolo.cfg)
 -----------
-Reduced Input Width/Height = 108x108     
+Reduced Input Width/Height = 108x108    
+Output = 13x13
 (12) Convolutional Layers (3x1), all Batch Normalized and Padded    
 (3) Max Pools (2x1)    
 (1) Custom anchor based on width/height ratio of bounding box best describing the object shape    
