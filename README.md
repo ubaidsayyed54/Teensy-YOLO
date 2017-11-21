@@ -34,7 +34,7 @@ Output = 13x13
 
 Training (~15000 iterations needed for this dataset)
 --------
-Workstation Ubuntu 16.04 / GTX 1060 (6G Memory) 
+Workstation Ubuntu 16.04 / GTX 1060 (6G Memory)      
 Pre-trained weights: darknet19_448.conv.32    
 learning_rate=0.001    
 policy=steps    
