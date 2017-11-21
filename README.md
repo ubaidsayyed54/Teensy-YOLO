@@ -3,10 +3,26 @@ Fast object recognition (~15 FPS) on Raspberry Pi 3, using YOLO (v2)/Darknet wit
 
 Use-Case
 --------
-YOLO may be used as a custom location detector for specific objects (invariant) on an SBC (Raspberry Pi), with high FPS and lowered, but sufficient, accuracy.  This case is for a Hackaday project (https://hackaday.io/project/26863-visioneer), using a local network on a small quad-core SBC (NanoPi NEO AIR)
+YOLO/Darknet may be used as a custom location detector for specific objects (invariant) on a multi-core SBC (like Raspberry Pi 3), with high FPS and lowered, but sufficient, accuracy.  This specific use was for a Hackaday wearable (https://hackaday.io/project/26863-visioneer), worn by a blind person to detect the presence and location of a pedestrian button near a crosswalk.
 
-Teensy-YOLO (Scaled down Tiny-YOLO-VOC v2)
--------------------------------------------
+Hardware for Inference (as shown:  )
+--------
+Raspberry Pi 3 Model B (no overclocking)
+Raspberry Pi Camera Module V2 - 8 Megapixel,1080p
+Kuman 3.5 Inch TFT LCD Display Monitor
+40x40mm Fan (required to prevent CPU throttling due to overheating)
+
+Software
+--------
+Raspbian Stretch - https://www.raspberrypi.org/downloads/raspbian/
+Darknet for NNPack - https://github.com/digitalbrain79/darknet-nnpack
+OpenCV 3.3.1 (2017.10.23) - https://opencv.org/releases.html
+Changes to demo.c - default demo will not run NNPack multi-threading
+Changes to image.c - added simple equation to output whether bbox is left, right or center
+Changes to detector.c - custom location of names file and number of classes
+
+Teensy-YOLO
+-----------
 Reduced Input Width/Height = 108x108    
 (12) Convolutional Layers (3x1), all Batch Normalized and Padded    
 (3) Max Pools (2x1)    
@@ -16,19 +32,27 @@ Reduced Input Width/Height = 108x108
 
 Training
 --------
-~15000 iterations on GTX 1060 (6G)    
-Pre-trained weights used: darknet19_448.conv.32    
+Ubuntu 16.04 and GTX 1060 (6G Memory)
+~15000 iterations
+Pre-trained weights: darknet19_448.conv.32    
 learning_rate=0.001    
 policy=steps    
 steps=10000,20000,30000    
 scales=.1,.1,.1    
 
-Dataset
+Dataset (Tutorial: https://timebutt.github.io/static/how-to-train-yolov2-to-detect-custom-objects/)
 -------
-29 images of a particular pedestrian button at various distances extracted from a 720p video at eye-height, then converted to 208x208 JPEGs.
+29 images of a one pedestrian button at various distances, 
+Extracted (ffmpeg) from a 720p video (Samsung Galaxy 8 phone) at eye-height to 640x480 images.
+Converted (mogrify) from PNG to JPEGs
+Resized (convert) to 208x208.
+Bounding Box Tool:  https://github.com/puzzledqs/BBox-Label-Tool
+Converted (python ./convert.py) labels to YOLO format
+Create train.txt and test.txt (python ./process.py)
 
 Results
 -------
 Validtion set (10%) avg accuracy: ~70%    
-Low false positives on street corner with -threshold 0.3 (30%)    
-Avg FPS on Pi3 (not-overclocked): 15    
+Low false positives during live street corner scenario with -threshold 0.3 (30%)    
+Pi3: ~15 FPS
+NanoPi NEO Air: ~10 FPS
