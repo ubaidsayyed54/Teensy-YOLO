@@ -3,7 +3,7 @@ Fast object recognition (~15 FPS) on Raspberry Pi 3, using YOLO (v2)/Darknet wit
 
 Use-Case
 --------
-YOLO may be used as a custom location detector for specific objects (invariant) on an SBC (Raspberry Pi), with high FPS (and lowered, but sufficient) accuracy.  This case is for a Hackaday project (https://hackaday.io/project/26863-visioneer), using a local network on a small quad-core SBC (NanoPi NEO AIR)
+YOLO may be used as a custom location detector for specific objects (invariant) on an SBC (Raspberry Pi), with high FPS and lowered, but sufficient, accuracy.  This case is for a Hackaday project (https://hackaday.io/project/26863-visioneer), using a local network on a small quad-core SBC (NanoPi NEO AIR)
 
 Teensy-YOLO (Scaled down Tiny-YOLO-VOC v2)
 -------------------------------------------
