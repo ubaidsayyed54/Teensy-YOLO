@@ -1,5 +1,5 @@
-# Teensy-YOLO 
-Fast object recognition (~14 FPS) on Raspberry Pi 3, using scaled-down version of Tiny-YOLO (v2) / Darknet with NNPack on a custom dataset, using a single object class.
+# CondenseNet-YOLO 
+Fast object recognition (~14 FPS) on Raspberry Pi 3, YOLO (v2) / Darknet with NNPack on a custom dataset, using a single object class.  Design is loosely based on CondenseNet: https://arxiv.org/pdf/1711.09224.pdf 
 
 Use-Case
 --------
@@ -23,7 +23,7 @@ Changes to demo.c - default demo will not run NNPack multi-threading, without th
 Changes to image.c - added simple equation to output whether bbox is left, right or center of screen center    
 Changes to detector.c - YOU WILL NEED TO CUSTOMIZE THIS with the path to your names file and number of classes   
 
-Teensy-YOLO (teensy-yolo.cfg)
+CondenseNet-YOLO  (CondenseNet-YOLO.cfg)
 -----------
 Reduced Input Width/Height = 108x108    
 Output = 13x13    
@@ -57,4 +57,4 @@ Results
 Validtion set (10%) avg accuracy: ~70%    
 Low false positives during live street corner scenario with -threshold 0.3 (30%)    
 Pi3: ~14 FPS    
-NanoPi NEO Air: ~8-9 FPS    
+NanoPi NEO Air: ~10 FPS
