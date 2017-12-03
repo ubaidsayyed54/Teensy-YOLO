@@ -1,5 +1,5 @@
-# CondenseNet-YOLO 
-Fast object recognition (~14 FPS) on Raspberry Pi 3, YOLO (v2) / Darknet with NNPack on a custom dataset, using a single object class.  Design is loosely based on CondenseNet: https://arxiv.org/pdf/1711.09224.pdf 
+# Teensy-YOLO 
+Fast object recognition (~14 FPS) on Raspberry Pi 3, YOLO (v2) / Darknet with NNPack on a custom dataset, using a single object class.
 
 Use-Case
 --------
