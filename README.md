@@ -1,9 +1,9 @@
 # Teensy-YOLO 
-Fast object recognition (~14 FPS) on Raspberry Pi 3, YOLO (v2) / Darknet with NNPack on a custom dataset, using a single object class.
+Fast object recognition (15-18 FPS) on Raspberry Pi 3, YOLO (v2) / Darknet with NNPack on a custom dataset, using a three object classes.
 
 Use-Case
 --------
-YOLO/Darknet may be used as a custom location detector on a multi-core SBC (like Raspberry Pi 3), with high FPS and lowered, but sufficient, accuracy, when only a small number of classes are needed.  This specific use was built for a Hackaday wearable (https://hackaday.io/project/26863-visioneer), to be used by a blind person, to detect the presence and direction of a pedestrian button near a crosswalk.
+YOLO/Darknet may be used as a location tool (left/right/up/down from camera center) on a multi-core SBC (like Raspberry Pi 3), with high FPS and lowered, but sufficient, accuracy.  This specific use was built as part of a Hackaday open-source project(https://hackaday.io/project/26863-visioneer).  A wearable, used by a visually impaired person, to detect the presence and direction of a pedestrian button near a crosswalk.
 
 Hardware (as shown:  )
 --------
@@ -32,7 +32,7 @@ Maintained YOLO Output = 13x13
 (1) Final Linear Convolutional Layer - Filters = (#classes + #coords(4) + 1)*(NUM)    
 [Ex. 3 classes, 2 anchor(NUM) -> (3 + 4 + 1) * 2 = 16  Filters for last layer]    
 
-Training (~15000 iterations needed for this dataset)
+Training (~15000 iterations needed to achieve average IOU 80%)
 --------  
 Pre-trained weight file: darknet19_448.conv.32    
 learning_rate=0.001    
@@ -40,7 +40,7 @@ policy=steps
 steps=10000,20000,30000    
 scales=.1,.1,.1    
 
-Dataset
+Dataset (very small, as could be the case for many custom uses) 
 -------
 (0) stopsign - 270 stop signs (from Guanghan Ning - http://guanghan.info/blog/en/my-works/train-yolo/)
 (1) yieldsign - 284 yield signs (from Guanghan Ning - http://guanghan.info/blog/en/my-works/train-yolo/)
