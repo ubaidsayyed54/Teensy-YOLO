@@ -7,12 +7,11 @@ YOLO/Darknet may be used as a custom location detector on a multi-core SBC (like
 
 Hardware (as shown:  )
 --------
-Raspberry Pi 3 Model B (no overclocking)    
+Raspberry Pi 3 Model B (not overclocking, but fan will still be needed)    
 Raspberry Pi Camera Module V2 - 8 Megapixel,1080p     
 (Optional) Kuman 3.5 Inch TFT LCD Display Monitor    
 40x40mm Fan (required to prevent CPU throttling due to overheating)   
 Training Workstation: Ubuntu 16.04 / GTX 1060 (6G) / CUDA 8.0.61.2 / CuDNN 5.1    
-NOTE:  I acheived 10 FPS using the much smaller NanoPi Neo AIR    
 
 Software
 --------
@@ -23,15 +22,15 @@ Changes to demo.c - default demo will not run NNPack multi-threading, without th
 Changes to image.c - added simple equation to output whether bbox is left, right or center of screen center    
 Changes to detector.c - YOU WILL NEED TO CUSTOMIZE THIS with the path to your names file and number of classes   
 
-CondenseNet-YOLO  (CondenseNet-YOLO.cfg)
+Teensy-YOLO  (teensy-yolo.cfg)
 -----------
 Reduced Input Width/Height = 108x108    
-Output = 13x13    
+Maintained YOLO Output = 13x13    
 (12) Convolutional Layers (3x1), all Batch Normalized and Padded    
 (3) Max Pools (2x1)    
-(1) Custom anchor based on width/height ratio of bounding box best describing the object shape    
+(2) Custom anchors based on width/height ratio of bounding box best describing the object shape    
 (1) Final Linear Convolutional Layer - Filters = (#classes + #coords(4) + 1)*(NUM)    
-[Ex. 1 class, 1 anchor(NUM) -> (1 + 4 + 1) * 1 = 6  Filters for last layer]    
+[Ex. 3 classes, 2 anchor(NUM) -> (3 + 4 + 1) * 2 = 16  Filters for last layer]    
 
 Training (~15000 iterations needed for this dataset)
 --------  
@@ -43,10 +42,9 @@ scales=.1,.1,.1
 
 Dataset
 -------
-29 images of a one pedestrian button at various distances    
-Extracted (ffmpeg) from a 720p video (Samsung Galaxy 8 phone), taken at eye-height, to 640x480 images    
-Converted (mogrify) from PNG to JPEGs    
-Resized (convert) to 208x208    
+(0) stopsign - 270 stop signs (from Guanghan Ning - http://guanghan.info/blog/en/my-works/train-yolo/)
+(1) yieldsign - 284 yield signs (from Guanghan Ning - http://guanghan.info/blog/en/my-works/train-yolo/)
+(2) button - 29 images of a one type of pedestrian button extracted from video 
 Bounding Box Tool:  https://github.com/puzzledqs/BBox-Label-Tool    
 Converted (python ./convert.py) labels to YOLO format    
 Create train.txt and test.txt (python ./process.py)    
@@ -56,5 +54,5 @@ Results
 -------
 Validtion set (10%) avg accuracy: ~70%    
 Low false positives during live street corner scenario with -threshold 0.3 (30%)    
-Pi3: ~14 FPS    
+Pi3: Avg 15-18 FPS    
 NanoPi NEO Air: ~10 FPS
