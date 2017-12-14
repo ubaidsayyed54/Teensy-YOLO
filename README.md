@@ -7,7 +7,7 @@ YOLO/Darknet may be used as a location tool (left/right/up/down from camera cent
 
 Hardware (as shown:  )
 --------
-Raspberry Pi 3 Model B (not overclocking, but fan will still be needed)  
+Raspberry Pi 3 Model B (not overclocked, but fan will still be needed)  
 ![test image size](https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-1-1619x1080.jpg){:height="50%" width="50%"}       
 Raspberry Pi Camera Module V2 - 8 Megapixel,1080p     
 ![Raspberry Pi Camera](https://www.raspberrypi.org/app/uploads/2016/04/camera_v2.jpg{:height="10%" width="10%"})     
