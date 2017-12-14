@@ -19,7 +19,7 @@ Software
 --------
 Raspbian Stretch - https://www.raspberrypi.org/downloads/raspbian/    
 Darknet for NNPack - https://github.com/digitalbrain79/darknet-nnpack    
-OpenCV 3.3.1 (2017.10.23) - https://opencv.org/releases.html    
+OpenCV 3.3.1 (2017.10.23) - https://www.pyimagesearch.com/2017/10/09/optimizing-opencv-on-the-raspberry-pi/    
 Changes to demo.c - default demo will not run NNPack multi-threading, without these modifications    
 Changes to image.c - added simple equation to output whether bbox is left, right or center of screen center    
 Changes to detector.c - YOU WILL NEED TO CUSTOMIZE THIS with the path to your names file and number of classes   
