@@ -1,5 +1,5 @@
 # Teensy-YOLO (Code to be published soon!  This is a draft)
-Fast object recognition (15-18 FPS) on Raspberry Pi 3, YOLO (v2) / Darknet with NNPack on a custom dataset, using a three object classes.
+Fast object recognition (15-18 FPS) from live video feed (OpenCV) using a Raspberry Pi 3, YOLO (v2) / Darknet with NNPack on a custom dataset, and three object classes.
 
 Use-Case
 --------
