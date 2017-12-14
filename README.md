@@ -40,11 +40,11 @@ policy=steps
 steps=10000,20000,30000    
 scales=.1,.1,.1    
 
-Dataset (very small, as could be the case for many custom uses) 
+Dataset (very small, as could be the case for many custom uses)    
 -------
-(0) stopsign - 270 stop signs (from Guanghan Ning - http://guanghan.info/blog/en/my-works/train-yolo/)
-(1) yieldsign - 284 yield signs (from Guanghan Ning - http://guanghan.info/blog/en/my-works/train-yolo/)
-(2) button - 29 images of a one type of pedestrian button extracted from video 
+(0) stopsign - 270 stop signs (from Guanghan Ning - http://guanghan.info/blog/en/my-works/train-yolo/)    
+(1) yieldsign - 284 yield signs (from Guanghan Ning - http://guanghan.info/blog/en/my-works/train-yolo/)    
+(2) button - 29 images of a one type of pedestrian button extracted from video    
 Bounding Box Tool:  https://github.com/puzzledqs/BBox-Label-Tool    
 Converted (python ./convert.py) labels to YOLO format    
 Create train.txt and test.txt (python ./process.py)    
