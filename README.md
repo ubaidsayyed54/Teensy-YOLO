@@ -56,5 +56,5 @@ Results
 -------
 Validtion set (10%) avg accuracy: ~70%    
 Low false positives during live street corner scenario with -threshold 0.3 (30%)    
-Pi3: Avg 15-18 FPS    
+Pi3: Teensy-YOLO 15-18 FPS, as compared to 1.3 FPS using Tiny-YOLO on NNPack.
 NanoPi NEO Air: ~10 FPS
